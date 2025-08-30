@@ -8,12 +8,14 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
   <!-- Open Graph Meta -->
   <meta property="og:title" content="GPI Jemaat Bersinar">
   <meta property="og:description" content="Jadwal Ibadah, Renungan Harian, dan Beban Doa.">
-  <meta property="og:image" content="https://example.com/images/poster.jpg">
-  <meta property="og:url" content="https://example.com">
-
+  <meta property="og:image" content="https://agusmeliala.github.io/gereja-penyebaran-injil/images/poster.jpg">
+  <meta property="og:url" content="https://agusmeliala.github.io/gereja-penyebaran-injil/">
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
 
@@ -51,13 +53,20 @@
     <p class="mt-4 text-xl font-semibold">"Hidup dalam Kasih Kristus"</p>
   </section>
 
-  <!-- Galeri -->
-  <section class="p-6">
+  <!-- Galeri (auto-scroll) -->
+  <section class="p-6 bg-gray-100">
     <h2 class="text-2xl font-bold mb-4 text-center">Galeri Foto</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <img src="images/galeri1.jpg" class="rounded-lg shadow hover:scale-105 transition">
-      <img src="images/galeri2.jpg" class="rounded-lg shadow hover:scale-105 transition">
-      <img src="images/galeri3.jpg" class="rounded-lg shadow hover:scale-105 transition">
+    <div class="overflow-hidden relative">
+      <div class="flex space-x-4 animate-scroll">
+        <img src="images/galeri1.jpg" class="h-40 w-auto rounded-lg shadow">
+        <img src="images/galeri2.jpg" class="h-40 w-auto rounded-lg shadow">
+        <img src="images/galeri3.jpg" class="h-40 w-auto rounded-lg shadow">
+        <img src="images/galeri4.jpg" class="h-40 w-auto rounded-lg shadow">
+        <img src="images/galeri5.jpg" class="h-40 w-auto rounded-lg shadow">
+        <img src="images/galeri6.jpg" class="h-40 w-auto rounded-lg shadow">
+        <img src="images/galeri7.jpg" class="h-40 w-auto rounded-lg shadow">
+        <img src="images/galeri8.jpg" class="h-40 w-auto rounded-lg shadow">
+      </div>
     </div>
   </section>
 
