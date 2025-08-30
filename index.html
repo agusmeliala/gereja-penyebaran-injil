@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPI Jemaat Bersinar</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="GPI Jemaat Bersinar">
+  <meta property="og:description" content="Jadwal Ibadah, Renungan Harian, dan Beban Doa.">
+  <meta property="og:image" content="https://example.com/images/poster.jpg">
+  <meta property="og:url" content="https://example.com">
+
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-900 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold">GPI Jemaat Bersinar</h1>
+    <p class="text-lg">Bersinar dalam Kasih Kristus</p>
+  </header>
+
+  <!-- Jadwal Ibadah -->
+  <section class="p-6">
+    <h2 class="text-2xl font-bold mb-4 text-center">Jadwal Ibadah</h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border border-gray-300 text-center">
+        <thead class="bg-gray-200">
+          <tr>
+            <th class="p-2 border">Hari</th>
+            <th class="p-2 border">Waktu</th>
+            <th class="p-2 border">Kegiatan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="p-2 border">Minggu</td><td class="p-2 border">09:00</td><td class="p-2 border">Ibadah Raya</td></tr>
+          <tr><td class="p-2 border">Rabu</td><td class="p-2 border">19:00</td><td class="p-2 border">Doa Malam</td></tr>
+          <tr><td class="p-2 border">Sabtu</td><td class="p-2 border">17:00</td><td class="p-2 border">Sekolah Minggu</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Poster Pendeta -->
+  <section class="p-6 bg-yellow-100 text-center">
+    <h2 class="text-2xl font-bold mb-4">Tema Khotbah Minggu Ini</h2>
+    <img src="images/poster.jpg" alt="Poster Pendeta" class="mx-auto rounded-lg shadow-lg max-h-96">
+    <p class="mt-4 text-xl font-semibold">"Hidup dalam Kasih Kristus"</p>
+  </section>
+
+  <!-- Galeri -->
+  <section class="p-6">
+    <h2 class="text-2xl font-bold mb-4 text-center">Galeri Foto</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="images/galeri1.jpg" class="rounded-lg shadow hover:scale-105 transition">
+      <img src="images/galeri2.jpg" class="rounded-lg shadow hover:scale-105 transition">
+      <img src="images/galeri3.jpg" class="rounded-lg shadow hover:scale-105 transition">
+    </div>
+  </section>
+
+  <!-- Renungan Hari Ini -->
+  <section class="p-6 bg-green-100 text-center">
+    <h2 class="text-2xl font-bold mb-4">Renungan Hari Ini</h2>
+    <p id="renungan-ayat" class="text-lg font-semibold"></p>
+    <p id="renungan-isi" class="mt-2"></p>
+  </section>
+
+  <!-- Kontak Kami -->
+  <section class="p-6">
+    <h2 class="text-2xl font-bold mb-4 text-center">Kontak Kami (Beban Doa)</h2>
+    <form action="https://formspree.io/f/xxxxxx" method="POST" class="max-w-md mx-auto space-y-4">
+      <input type="text" name="nama" placeholder="Nama" required class="w-full p-2 border rounded">
+      <input type="email" name="email" placeholder="Email/WA" required class="w-full p-2 border rounded">
+      <textarea name="doa" placeholder="Tulis permohonan doa..." required class="w-full p-2 border rounded"></textarea>
+      <button type="submit" class="w-full bg-blue-700 text-white px-4 py-2 rounded">Kirim</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white p-6 text-center">
+    <p>Ikuti kami di:</p>
+    <div class="mt-2 space-x-4">
+      <a href="https://facebook.com/akun_gereja" target="_blank" class="underline">Facebook</a>
+      <a href="https://instagram.com/akun_gereja" target="_blank" class="underline">Instagram</a>
+    </div>
+    <p class="mt-4">&copy; 2025 GPI Jemaat Bersinar</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
