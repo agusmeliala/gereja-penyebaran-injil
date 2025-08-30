@@ -1,37 +1,9 @@
 [
-  {
-    "hari": "Senin",
-    "ayat": "Mazmur 23:1",
-    "isi": "Tuhan adalah gembalaku, takkan kekurangan aku."
-  },
-  {
-    "hari": "Selasa",
-    "ayat": "Filipi 4:13",
-    "isi": "Segala perkara dapat kutanggung di dalam Dia yang memberi kekuatan kepadaku."
-  },
-  {
-    "hari": "Rabu",
-    "ayat": "Yeremia 29:11",
-    "isi": "Sebab Aku ini mengetahui rancangan-rancangan apa yang ada pada-Ku mengenai kamu, demikianlah firman TUHAN."
-  },
-  {
-    "hari": "Kamis",
-    "ayat": "Matius 5:16",
-    "isi": "Demikianlah hendaknya terangmu bercahaya di depan orang, supaya mereka melihat perbuatanmu yang baik."
-  },
-  {
-    "hari": "Jumat",
-    "ayat": "Yesaya 41:10",
-    "isi": "Janganlah takut, sebab Aku menyertai engkau; janganlah bimbang, sebab Aku ini Allahmu."
-  },
-  {
-    "hari": "Sabtu",
-    "ayat": "Roma 8:28",
-    "isi": "Allah turut bekerja dalam segala sesuatu untuk mendatangkan kebaikan bagi mereka yang mengasihi Dia."
-  },
-  {
-    "hari": "Minggu",
-    "ayat": "Yohanes 3:16",
-    "isi": "Karena begitu besar kasih Allah akan dunia ini, sehingga Ia telah mengaruniakan Anak-Nya yang tunggal."
-  }
+  {"hari":"Senin","ayat":"Mazmur 23:1","isi":"Tuhan adalah gembalaku, takkan kekurangan aku."},
+  {"hari":"Selasa","ayat":"Filipi 4:13","isi":"Segala perkara dapat kutanggung di dalam Dia."},
+  {"hari":"Rabu","ayat":"Yeremia 29:11","isi":"Rancangan damai sejahtera untuk masa depanmu."},
+  {"hari":"Kamis","ayat":"Matius 5:16","isi":"Hendaklah terangmu bercahaya di depan orang."},
+  {"hari":"Jumat","ayat":"Yesaya 41:10","isi":"Janganlah takut, sebab Aku menyertai engkau."},
+  {"hari":"Sabtu","ayat":"Roma 8:28","isi":"Allah turut bekerja dalam segala sesuatu untuk mendatangkan kebaikan."},
+  {"hari":"Minggu","ayat":"Yohanes 3:16","isi":"Karena begitu besar kasih Allah akan dunia ini."}
 ]

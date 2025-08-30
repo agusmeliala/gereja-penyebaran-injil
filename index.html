@@ -20,80 +20,86 @@
 <body class="font-sans bg-gray-50 text-gray-800">
 
   <!-- Header -->
-  <header class="bg-blue-900 text-white p-6 text-center">
-    <h1 class="text-3xl font-bold">GPI Jemaat Bersinar</h1>
-    <p class="text-lg">Bersinar dalam Kasih Kristus</p>
+  <header class="bg-blue-900 text-white p-4 sticky top-0 shadow-lg z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">GPI Jemaat Bersinar</h1>
+      <nav class="space-x-4 hidden md:block">
+        <a href="#jadwal" class="hover:underline">Jadwal</a>
+        <a href="#poster" class="hover:underline">Poster</a>
+        <a href="#galeri" class="hover:underline">Galeri</a>
+        <a href="#renungan" class="hover:underline">Renungan</a>
+        <a href="#kontak" class="hover:underline">Kontak</a>
+      </nav>
+    </div>
   </header>
 
   <!-- Jadwal Ibadah -->
-  <section class="p-6">
+  <section id="jadwal" class="p-6 max-w-6xl mx-auto">
     <h2 class="text-2xl font-bold mb-4 text-center">Jadwal Ibadah</h2>
-    <div class="overflow-x-auto">
-      <table class="min-w-full border border-gray-300 text-center">
-        <thead class="bg-gray-200">
-          <tr>
-            <th class="p-2 border">Hari</th>
-            <th class="p-2 border">Waktu</th>
-            <th class="p-2 border">Kegiatan</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td class="p-2 border">Minggu</td><td class="p-2 border">09:00</td><td class="p-2 border">Ibadah Raya</td></tr>
-          <tr><td class="p-2 border">Rabu</td><td class="p-2 border">19:00</td><td class="p-2 border">Doa Malam</td></tr>
-          <tr><td class="p-2 border">Sabtu</td><td class="p-2 border">17:00</td><td class="p-2 border">Sekolah Minggu</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- Poster Pendeta -->
-  <section class="p-6 bg-yellow-100 text-center">
-    <h2 class="text-2xl font-bold mb-4">Tema Khotbah Minggu Ini</h2>
-    <img src="images/poster.jpg" alt="Poster Pendeta" class="mx-auto rounded-lg shadow-lg max-h-96">
-    <p class="mt-4 text-xl font-semibold">"Hidup dalam Kasih Kristus"</p>
-  </section>
-
-  <!-- Galeri (auto-scroll) -->
-  <section class="p-6 bg-gray-100">
-    <h2 class="text-2xl font-bold mb-4 text-center">Galeri Foto</h2>
-    <div class="overflow-hidden relative">
-      <div class="flex space-x-4 animate-scroll">
-        <img src="images/galeri1.jpg" class="h-40 w-auto rounded-lg shadow">
-        <img src="images/galeri2.jpg" class="h-40 w-auto rounded-lg shadow">
-        <img src="images/galeri3.jpg" class="h-40 w-auto rounded-lg shadow">
-        <img src="images/galeri4.jpg" class="h-40 w-auto rounded-lg shadow">
-        <img src="images/galeri5.jpg" class="h-40 w-auto rounded-lg shadow">
-        <img src="images/galeri6.jpg" class="h-40 w-auto rounded-lg shadow">
-        <img src="images/galeri7.jpg" class="h-40 w-auto rounded-lg shadow">
-        <img src="images/galeri8.jpg" class="h-40 w-auto rounded-lg shadow">
+    <div class="grid gap-4 md:grid-cols-3">
+      <div class="p-4 border rounded-lg shadow bg-white">
+        <h3 class="font-semibold">Minggu</h3>
+        <p class="text-gray-600">09:00 - Ibadah Raya</p>
+      </div>
+      <div class="p-4 border rounded-lg shadow bg-white">
+        <h3 class="font-semibold">Rabu</h3>
+        <p class="text-gray-600">19:00 - Doa Malam</p>
+      </div>
+      <div class="p-4 border rounded-lg shadow bg-white">
+        <h3 class="font-semibold">Sabtu</h3>
+        <p class="text-gray-600">17:00 - Sekolah Minggu</p>
       </div>
     </div>
   </section>
 
+  <!-- Poster Pendeta -->
+  <section id="poster" class="p-6 bg-yellow-100 text-center">
+    <h2 class="text-2xl font-bold mb-4">Tema Khotbah Minggu Ini</h2>
+    <img src="images/poster.jpg" alt="Poster Pendeta" class="mx-auto rounded-lg shadow-lg max-h-96 w-full md:w-1/2">
+    <p class="mt-4 text-xl font-semibold">"Hidup dalam Kasih Kristus"</p>
+  </section>
+
+  <!-- Galeri -->
+  <section id="galeri" class="p-6 bg-gray-100">
+    <h2 class="text-2xl font-bold mb-4 text-center">Galeri Foto</h2>
+    <div class="overflow-x-auto flex space-x-4 pb-4">
+      <img src="images/galeri1.jpg" class="h-40 w-auto rounded-lg shadow flex-shrink-0">
+      <img src="images/galeri2.jpg" class="h-40 w-auto rounded-lg shadow flex-shrink-0">
+      <img src="images/galeri3.jpg" class="h-40 w-auto rounded-lg shadow flex-shrink-0">
+      <img src="images/galeri4.jpg" class="h-40 w-auto rounded-lg shadow flex-shrink-0">
+      <img src="images/galeri5.jpg" class="h-40 w-auto rounded-lg shadow flex-shrink-0">
+      <img src="images/galeri6.jpg" class="h-40 w-auto rounded-lg shadow flex-shrink-0">
+      <img src="images/galeri7.jpg" class="h-40 w-auto rounded-lg shadow flex-shrink-0">
+      <img src="images/galeri8.jpg" class="h-40 w-auto rounded-lg shadow flex-shrink-0">
+    </div>
+  </section>
+
   <!-- Renungan Hari Ini -->
-  <section class="p-6 bg-green-100 text-center">
-    <h2 class="text-2xl font-bold mb-4">Renungan Hari Ini</h2>
-    <p id="renungan-ayat" class="text-lg font-semibold"></p>
-    <p id="renungan-isi" class="mt-2"></p>
+  <section id="renungan" class="p-6 max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl font-bold mb-4">📖 Renungan Hari Ini</h2>
+    <div class="p-4 bg-white shadow rounded-lg">
+      <p id="renungan-ayat" class="text-lg font-semibold text-blue-900"></p>
+      <p id="renungan-isi" class="mt-2 text-gray-700"></p>
+    </div>
   </section>
 
   <!-- Kontak Kami -->
-  <section class="p-6">
+  <section id="kontak" class="p-6 bg-blue-50">
     <h2 class="text-2xl font-bold mb-4 text-center">Kontak Kami (Beban Doa)</h2>
     <form action="https://formspree.io/f/xxxxxx" method="POST" class="max-w-md mx-auto space-y-4">
-      <input type="text" name="nama" placeholder="Nama" required class="w-full p-2 border rounded">
-      <input type="email" name="email" placeholder="Email/WA" required class="w-full p-2 border rounded">
-      <textarea name="doa" placeholder="Tulis permohonan doa..." required class="w-full p-2 border rounded"></textarea>
-      <button type="submit" class="w-full bg-blue-700 text-white px-4 py-2 rounded">Kirim</button>
+      <input type="text" name="nama" placeholder="Nama" required class="w-full p-3 border rounded">
+      <input type="email" name="email" placeholder="Email/WA" required class="w-full p-3 border rounded">
+      <textarea name="doa" placeholder="Tulis permohonan doa..." required class="w-full p-3 border rounded"></textarea>
+      <button type="submit" class="w-full bg-blue-700 text-white px-4 py-3 rounded-lg font-semibold">Kirim</button>
     </form>
   </section>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white p-6 text-center">
     <p>Ikuti kami di:</p>
-    <div class="mt-2 space-x-4">
-      <a href="https://facebook.com/akun_gereja" target="_blank" class="underline">Facebook</a>
-      <a href="https://instagram.com/akun_gereja" target="_blank" class="underline">Instagram</a>
+    <div class="mt-2 space-x-6 text-2xl">
+      <a href="https://facebook.com/akun_gereja" target="_blank">📘</a>
+      <a href="https://instagram.com/akun_gereja" target="_blank">📸</a>
     </div>
     <p class="mt-4">&copy; 2025 GPI Jemaat Bersinar</p>
   </footer>
