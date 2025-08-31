@@ -5,78 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GPI Jemaat Bersinar</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
 </head>
 <body>
   <header class="header">
-    <div class="container">
-      <h1 id="judul">GPI Jemaat Bersinar</h1>
-      <p id="subjudul">Bersinar dalam Kasih Kristus</p>
-    </div>
+    <h1>GPI Jemaat Bersinar</h1>
+    <p>Bersinar dalam Kasih Kristus</p>
   </header>
 
-  <section class="jadwal">
-    <div class="container">
-      <h2>Jadwal Ibadah</h2>
-      <div id="jadwal-container"></div>
-    </div>
+  <section id="jadwal">
+    <h2>Jadwal Ibadah</h2>
+    <div id="jadwal-container"></div>
   </section>
 
-  <section class="poster">
-    <div class="container">
-      <img id="poster-img" src="images/poster.jpg" alt="Poster Minggu Ini">
-    </div>
+  <section id="poster">
+    <h2>Minggu Ini</h2>
+    <img id="poster-img" alt="Poster Minggu Ini">
   </section>
 
-  <section class="galeri">
-    <div class="container">
-      <h2>Galeri</h2>
-      <div class="galeri-scroll" id="galeri"></div>
-    </div>
+  <section id="galeri">
+    <h2>Galeri</h2>
+    <div class="galeri-scroll" id="galeri-container"></div>
   </section>
 
-  <section class="renungan">
-    <div class="container">
-      <h2>Renungan Hari Ini</h2>
-      <div id="renungan-box"></div>
-    </div>
+  <section id="renungan">
+    <h2>Renungan Hari Ini</h2>
+    <div id="renungan-box"></div>
   </section>
 
-  <section class="kontak">
-    <div class="container">
-      <h2>Beban Doa</h2>
-      <form action="https://formspree.io/f/xxxxxxxx" method="POST">
-        <input type="text" name="nama" placeholder="Nama" required>
-        <input type="email" name="email" placeholder="Email / WA" required>
-        <textarea name="doa" placeholder="Tuliskan permohonan doa..." required></textarea>
-        <button type="submit">Kirim</button>
-      </form>
-    </div>
+  <section id="doa">
+    <h2>Beban Doa</h2>
+    <form action="https://formspree.io/f/your_form_id" method="POST">
+      <input type="text" name="nama" placeholder="Nama" required>
+      <input type="email" name="email" placeholder="Email/WA" required>
+      <textarea name="doa" placeholder="Tulis permohonan doa" required></textarea>
+      <button type="submit">Kirim</button>
+    </form>
   </section>
 
   <footer>
-    <div class="container">
-      <p id="footer-text">&copy; 2025 GPI Jemaat Bersinar</p>
-      <div class="social">
-        <a id="footer-fb" href="https://facebook.com" target="_blank"><img src="images/fb.png" alt="Facebook"></a>
-        <a id="footer-ig" href="https://instagram.com" target="_blank"><img src="images/ig.png" alt="Instagram"></a>
-      </div>
-    </div>
+    <p>&copy; 2025 GPI Jemaat Bersinar</p>
+    <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="FB"></a>
+    <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="IG"></a>
   </footer>
 
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyD53vxKLgwJYkgoi8bF6TMiBAxy2Pza7f0",
-      authDomain: "gpi-admin.firebaseapp.com",
-      projectId: "gpi-admin",
-      storageBucket: "gpi-admin.appspot.com",
-      messagingSenderId: "963621876257",
-      appId: "1:963621876257:web:faa2d9f7b8b68049e6960"
-    };
-    const app = firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-  </script>
   <script src="script.js"></script>
 </body>
 </html>

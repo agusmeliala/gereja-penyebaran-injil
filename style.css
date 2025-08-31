@@ -1,23 +1,10 @@
-
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; }
-.container { max-width:1200px; margin:auto; padding:1rem; }
-.header { background: linear-gradient(to right, #001f3f, #003366); color:white; text-align:center; padding:1.5rem 1rem; }
-.header h1 { margin:0; font-size:1.8rem; }
-.header p { margin:0; font-size:1rem; }
-.poster img { width:100%; height:auto; max-height:400px; object-fit:contain; display:block; margin:auto; }
-.jadwal h2, .galeri h2, .renungan h2, .kontak h2 { font-size:1.5rem; margin-bottom:1rem; text-align:center; }
-#jadwal-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; }
-#jadwal-container .card { background:#fff; padding:10px; border:1px solid #ddd; border-radius:5px; text-align:center; font-size:0.9rem; }
-.galeri-scroll { display:flex; gap:10px; overflow:hidden; animation:scroll 40s linear infinite; }
-.galeri-scroll img { height:120px; border-radius:8px; }
-@keyframes scroll { from { transform:translateX(0);} to { transform:translateX(-50%);} }
-.renungan { background:#fff; margin:1rem auto; padding:1rem; border-radius:8px; border:1px solid #ddd; max-width:800px; font-size:1rem; }
-.kontak form { display:flex; flex-direction:column; gap:10px; padding:1rem; max-width:600px; margin:auto; }
-.kontak input, .kontak textarea { padding:10px; border:1px solid #ccc; border-radius:5px; font-size:1rem; }
-.kontak button { background:#007BFF; color:white; padding:10px; border:none; border-radius:5px; font-size:1rem; cursor:pointer; }
-footer { background:#333; color:white; text-align:center; padding:1rem; }
-footer .social img { width:20px; margin:0 5px; }
-@media(max-width:768px){
-  .galeri-scroll img { height:100px; }
-  #jadwal-container .card { font-size:0.8rem; }
-}
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; color: #333; }
+header.header { text-align: center; padding: 2rem; background: linear-gradient(to right, #001f3f, #0074D9); color: white; }
+section { padding: 2rem; text-align: center; }
+#poster img { max-width: 100%; height: auto; border-radius: 10px; }
+.galeri-scroll { display: flex; overflow-x: auto; gap: 10px; }
+.galeri-scroll img { height: 150px; border-radius: 8px; flex-shrink: 0; }
+footer { text-align: center; background: #222; color: white; padding: 1rem; }
+footer img { margin: 0 5px; vertical-align: middle; }
+form input, form textarea { width: 100%; padding: 10px; margin: 5px 0; border-radius: 5px; border: 1px solid #ccc; }
+form button { width: 100%; padding: 10px; background: #0074D9; color: white; border: none; border-radius: 5px; cursor: pointer; }

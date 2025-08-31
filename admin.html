@@ -1,1 +1,33 @@
-<!DOCTYPE html><html lang='id'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Admin GPI</title><link rel='stylesheet' href='style.css'><script src='https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js'></script><script src='https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js'></script></head><body><header class='header'><h1>Admin Panel</h1></header><p>Panel admin tetap sama seperti versi sebelumnya.</p><script src='script.js'></script></body></html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - GPI</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>Admin Panel</h1>
+  </header>
+
+  <section>
+    <h2>Kelola Data Website</h2>
+    <form id="admin-form">
+      <select id="tipe">
+        <option value="jadwal">Jadwal</option>
+        <option value="poster">Poster</option>
+        <option value="galeri">Galeri</option>
+        <option value="renungan">Renungan</option>
+        <option value="footer">Footer</option>
+      </select>
+      <textarea id="konten" placeholder="Isi data di sini"></textarea>
+      <button type="submit">Simpan</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

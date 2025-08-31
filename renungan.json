@@ -1,23 +1,9 @@
 [
-  {
-    "isi": "Kasih Tuhan selalu baru setiap Minggu."
-  },
-  {
-    "isi": "Bersyukur dalam segala hal - Senin."
-  },
-  {
-    "isi": "Berdoalah senantiasa - Selasa."
-  },
-  {
-    "isi": "Tuhan gembalaku - Rabu."
-  },
-  {
-    "isi": "Kasih itu sabar - Kamis."
-  },
-  {
-    "isi": "Hidup dalam kasih Tuhan - Jumat."
-  },
-  {
-    "isi": "Damai sejahtera Kristus - Sabtu."
-  }
+  {"judul": "Hari 1", "isi": "Renungan hari pertama tentang kasih."},
+  {"judul": "Hari 2", "isi": "Renungan hari kedua tentang pengampunan."},
+  {"judul": "Hari 3", "isi": "Renungan hari ketiga tentang sukacita."},
+  {"judul": "Hari 4", "isi": "Renungan hari keempat tentang damai sejahtera."},
+  {"judul": "Hari 5", "isi": "Renungan hari kelima tentang kesabaran."},
+  {"judul": "Hari 6", "isi": "Renungan hari keenam tentang pengendalian diri."},
+  {"judul": "Hari 7", "isi": "Renungan hari ketujuh tentang iman."}
 ]
