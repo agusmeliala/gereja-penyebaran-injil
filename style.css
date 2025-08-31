@@ -4,9 +4,15 @@
 }
 
 .animate-scroll {
-  animation: scroll 60s linear infinite;
+  animation: scroll 80s linear infinite;
 }
 
 img {
   object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
 }
