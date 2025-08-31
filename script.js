@@ -1,4 +1,3 @@
-// Firebase init
 const firebaseConfig = {
   apiKey: "AIzaSyD53vxKLgwJYkgoi8bF6TMiBAxy2Pza7f0",
   authDomain: "gpi-admin.firebaseapp.com",
@@ -9,12 +8,10 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-
 async function loadRenungan() {
   let today = new Date();
-  let dayIndex = today.getDay(); // 0 = Minggu, dst.
+  let dayIndex = today.getDay();
   let renunganText = "";
-
   try {
     const doc = await db.collection("renungan").doc(dayIndex.toString()).get();
     if (doc.exists) {
@@ -29,7 +26,6 @@ async function loadRenungan() {
     const data = await res.json();
     renunganText = data[dayIndex]?.isi || "Renungan belum tersedia.";
   }
-
   document.getElementById("renungan-hari-ini").innerText = renunganText;
 }
 loadRenungan();
