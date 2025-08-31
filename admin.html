@@ -4,45 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin GPI</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
 </head>
-<body class="bg-gray-100">
-  <div class="max-w-2xl mx-auto p-6">
-    <h1 class="text-2xl font-bold mb-6 text-center">Admin Panel GPI</h1>
-    <section class="bg-white p-4 rounded shadow mb-6">
-      <h2 class="text-lg font-semibold mb-2">Update Renungan</h2>
-      <select id="hari" class="w-full border p-2 mb-2">
-        <option value="0">Minggu</option>
-        <option value="1">Senin</option>
-        <option value="2">Selasa</option>
-        <option value="3">Rabu</option>
-        <option value="4">Kamis</option>
-        <option value="5">Jumat</option>
-        <option value="6">Sabtu</option>
-      </select>
-      <textarea id="renunganText" class="w-full border p-2 mb-2" placeholder="Isi renungan"></textarea>
-      <button onclick="simpanRenungan()" class="bg-blue-600 text-white px-4 py-2 rounded">Simpan</button>
-    </section>
-  </div>
+<body>
+  <header class="header"><h1>Admin Panel</h1></header>
+
+  <section>
+    <h2>Update Header</h2>
+    <input id="judulInput" placeholder="Judul">
+    <input id="subjudulInput" placeholder="Subjudul">
+    <button onclick="updateHeader()">Simpan</button>
+  </section>
+
+  <section>
+    <h2>Update Poster Harian</h2>
+    <input id="posterHari" placeholder="Hari (0=Minggu...6=Sabtu)">
+    <input id="posterUrl" placeholder="URL Poster">
+    <button onclick="updatePoster()">Simpan Poster</button>
+  </section>
+
+  <section>
+    <h2>Tambah Jadwal</h2>
+    <input id="hari" placeholder="Hari">
+    <input id="jam" placeholder="Jam">
+    <input id="kegiatan" placeholder="Kegiatan">
+    <button onclick="addJadwal()">Tambah Jadwal</button>
+  </section>
+
+  <section>
+    <h2>Update Renungan</h2>
+    <input id="renunganHari" placeholder="Hari (0-6)">
+    <textarea id="renunganIsi" placeholder="Isi renungan"></textarea>
+    <button onclick="updateRenungan()">Simpan Renungan</button>
+  </section>
+
+  <section>
+    <h2>Tambah Galeri</h2>
+    <input id="galeriUrl" placeholder="URL gambar">
+    <button onclick="addGaleri()">Tambah Gambar</button>
+  </section>
+
+  <section>
+    <h2>Update Footer</h2>
+    <input id="footerText" placeholder="Teks copyright">
+    <input id="fbUrl" placeholder="Facebook URL">
+    <input id="igUrl" placeholder="Instagram URL">
+    <button onclick="updateFooter()">Simpan Footer</button>
+  </section>
+
   <script>
     const firebaseConfig = {
       apiKey: "AIzaSyD53vxKLgwJYkgoi8bF6TMiBAxy2Pza7f0",
       authDomain: "gpi-admin.firebaseapp.com",
       projectId: "gpi-admin",
-      storageBucket: "gpi-admin.firebasestorage.app",
+      storageBucket: "gpi-admin.appspot.com",
       messagingSenderId: "963621876257",
-      appId: "1:963621876257:web:faa2d9f7b86b8049e6960"
+      appId: "1:963621876257:web:faa2d9f7b8b68049e6960"
     };
     const app = firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
-    async function simpanRenungan() {
-      const hari = document.getElementById('hari').value;
-      const isi = document.getElementById('renunganText').value;
-      await db.collection("renungan").doc(hari).set({ isi });
-      alert("Renungan berhasil disimpan!");
-    }
   </script>
+  <script src="script.js"></script>
 </body>
 </html>

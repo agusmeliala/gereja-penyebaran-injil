@@ -1,7 +1,18 @@
-@keyframes scroll-slow {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.animate-scroll-slow {
-  animation: scroll-slow 20s linear infinite;
-}
+
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; }
+.header { background: linear-gradient(to right, #001f3f, #003366); color:white; text-align:center; padding:2rem; }
+.header h1 { margin:0; font-size:2rem; }
+.poster img { width:100%; height:auto; display:block; }
+.jadwal { padding:2rem; }
+#jadwal-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; }
+#jadwal-container .card { background:#fff; padding:10px; border:1px solid #ddd; border-radius:5px; text-align:center; }
+.galeri { padding:2rem; }
+.galeri-scroll { display:flex; gap:10px; overflow:hidden; animation:scroll 40s linear infinite; }
+.galeri-scroll img { height:150px; border-radius:8px; }
+@keyframes scroll { from { transform:translateX(0);} to { transform:translateX(-50%);} }
+.renungan { background:#fff; margin:2rem; padding:1rem; border-radius:8px; border:1px solid #ddd; }
+.kontak form { display:flex; flex-direction:column; gap:10px; padding:1rem; }
+.kontak input, .kontak textarea { padding:10px; border:1px solid #ccc; border-radius:5px; }
+.kontak button { background:#007BFF; color:white; padding:10px; border:none; border-radius:5px; }
+footer { background:#333; color:white; text-align:center; padding:1rem; }
+footer .social img { width:24px; margin:0 5px; }
