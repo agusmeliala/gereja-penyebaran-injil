@@ -3,31 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel - GPI</title>
+  <title>Admin Panel</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyD53vxKLgwJYkgoi8bF6TMiBAxy2Pza7f0",
+      authDomain: "gpi-admin.firebaseapp.com",
+      projectId: "gpi-admin",
+      storageBucket: "gpi-admin.appspot.com",
+      messagingSenderId: "963621876257",
+      appId: "1:963621876257:web:faa2d9f7b8b68049e6c960"
+    };
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    async function tambahJadwal() {
+      const hari = document.getElementById("hari").value;
+      const acara = document.getElementById("acara").value;
+      const waktu = document.getElementById("waktu").value;
+      await db.collection("Jadwal").doc(hari).set({ Hari: hari, Acara: acara, Waktu: waktu });
+      alert("Jadwal berhasil ditambahkan!");
+    }
+  </script>
 </head>
 <body>
-  <header class="header">
-    <h1>Admin Panel</h1>
-  </header>
-
+  <header><h1>Admin Panel</h1></header>
   <section>
-    <h2>Kelola Data Website</h2>
-    <form id="admin-form">
-      <select id="tipe">
-        <option value="jadwal">Jadwal</option>
-        <option value="poster">Poster</option>
-        <option value="galeri">Galeri</option>
-        <option value="renungan">Renungan</option>
-        <option value="footer">Footer</option>
-      </select>
-      <textarea id="konten" placeholder="Isi data di sini"></textarea>
-      <button type="submit">Simpan</button>
-    </form>
+    <h2>Tambah Jadwal</h2>
+    <input id="hari" placeholder="Hari">
+    <input id="acara" placeholder="Acara">
+    <input id="waktu" placeholder="Waktu">
+    <button onclick="tambahJadwal()">Simpan</button>
   </section>
-
-  <script src="script.js"></script>
 </body>
 </html>

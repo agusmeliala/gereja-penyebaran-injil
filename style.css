@@ -1,10 +1,73 @@
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; color: #333; }
-header.header { text-align: center; padding: 2rem; background: linear-gradient(to right, #001f3f, #0074D9); color: white; }
-section { padding: 2rem; text-align: center; }
-#poster img { max-width: 100%; height: auto; border-radius: 10px; }
-.galeri-scroll { display: flex; overflow-x: auto; gap: 10px; }
-.galeri-scroll img { height: 150px; border-radius: 8px; flex-shrink: 0; }
-footer { text-align: center; background: #222; color: white; padding: 1rem; }
-footer img { margin: 0 5px; vertical-align: middle; }
-form input, form textarea { width: 100%; padding: 10px; margin: 5px 0; border-radius: 5px; border: 1px solid #ccc; }
-form button { width: 100%; padding: 10px; background: #0074D9; color: white; border: none; border-radius: 5px; cursor: pointer; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+header {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, #001f3f, #003366);
+  color: white;
+}
+#jadwal {
+  padding: 1rem;
+  text-align: center;
+}
+#jadwal-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.jadwal-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background: white;
+  width: 200px;
+}
+#poster img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
+.galeri-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem;
+}
+.galeri-scroll img {
+  height: 150px;
+  border-radius: 10px;
+}
+#renungan, #doa {
+  padding: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+form input, form textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+button {
+  background: #003366;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+footer {
+  text-align: center;
+  background: #222;
+  color: white;
+  padding: 1rem;
+}

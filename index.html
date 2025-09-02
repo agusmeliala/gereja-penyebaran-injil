@@ -5,8 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GPI Jemaat Bersinar</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+  <script defer src="script.js"></script>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyD53vxKLgwJYkgoi8bF6TMiBAxy2Pza7f0",
+      authDomain: "gpi-admin.firebaseapp.com",
+      projectId: "gpi-admin",
+      storageBucket: "gpi-admin.appspot.com",
+      messagingSenderId: "963621876257",
+      appId: "1:963621876257:web:faa2d9f7b8b68049e6c960"
+    };
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
 </head>
 <body>
   <header class="header">
@@ -20,36 +34,37 @@
   </section>
 
   <section id="poster">
-    <h2>Minggu Ini</h2>
-    <img id="poster-img" alt="Poster Minggu Ini">
+    <img src="images/poster.jpg" alt="Poster Minggu Ini">
   </section>
 
   <section id="galeri">
     <h2>Galeri</h2>
-    <div class="galeri-scroll" id="galeri-container"></div>
+    <div class="galeri-scroll">
+      <img src="images/foto1.jpg" alt="Foto 1">
+      <img src="images/foto2.jpg" alt="Foto 2">
+      <img src="images/foto3.jpg" alt="Foto 3">
+    </div>
   </section>
 
   <section id="renungan">
     <h2>Renungan Hari Ini</h2>
-    <div id="renungan-box"></div>
+    <div id="renungan-container"></div>
   </section>
 
   <section id="doa">
     <h2>Beban Doa</h2>
-    <form action="https://formspree.io/f/your_form_id" method="POST">
+    <form action="https://formspree.io/f/yourformid" method="POST">
       <input type="text" name="nama" placeholder="Nama" required>
-      <input type="email" name="email" placeholder="Email/WA" required>
+      <input type="email" name="email" placeholder="Email" required>
       <textarea name="doa" placeholder="Tulis permohonan doa" required></textarea>
       <button type="submit">Kirim</button>
     </form>
   </section>
 
-  <footer>
+  <footer class="footer">
     <p>&copy; 2025 GPI Jemaat Bersinar</p>
-    <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="FB"></a>
-    <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="IG"></a>
+    <a href="https://facebook.com" target="_blank">Facebook</a> |
+    <a href="https://instagram.com" target="_blank">Instagram</a>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
