@@ -1,8 +1,8 @@
-// Import Firebase SDK
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+// Import Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// Config (isi dengan Firebase config project kamu)
+// Konfigurasi Firebase (ganti dengan config milikmu)
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
   authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
@@ -16,36 +16,34 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Fungsi ambil Jadwal
+// Render Jadwal
 async function loadJadwal() {
-  const container = document.getElementById("jadwal-list");
+  const container = document.getElementById("jadwal");
   container.innerHTML = "";
   const querySnapshot = await getDocs(collection(db, "Jadwal"));
   querySnapshot.forEach((doc) => {
     const data = doc.data();
     container.innerHTML += `
       <div class="card">
-        <h3>${data.Hari}</h3>
-        <p><strong>Acara:</strong> ${data.Acara}</p>
-        <p><strong>Waktu:</strong> ${data.Waktu}</p>
-      </div>
-    `;
+        <strong>${data.Hari || ""}</strong><br/>
+        Acara: ${data.Acara || ""}<br/>
+        Waktu: ${data.Waktu || ""}
+      </div>`;
   });
 }
 
-// Fungsi ambil Renungan
+// Render Renungan
 async function loadRenungan() {
-  const container = document.getElementById("renungan-list");
+  const container = document.getElementById("renungan");
   container.innerHTML = "";
   const querySnapshot = await getDocs(collection(db, "Renungan"));
   querySnapshot.forEach((doc) => {
     const data = doc.data();
     container.innerHTML += `
       <div class="card">
-        <h3>${data.Judul}</h3>
-        <p>${data.Isi}</p>
-      </div>
-    `;
+        <strong>${data.Judul || ""}</strong><br/>
+        ${data.Isi || ""}
+      </div>`;
   });
 }
 
