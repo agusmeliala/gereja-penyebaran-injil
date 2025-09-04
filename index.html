@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GPI Jemaat Bersinar</title>
-  <link rel="stylesheet" href="style.css" />
-  <script type="module" src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 </head>
 <body>
   <header>
     <h1>GPI Jemaat Bersinar</h1>
   </header>
+
   <main>
     <section>
       <h2>Jadwal Ibadah</h2>
-      <div id="jadwal"></div>
+      <ul id="jadwal-list"></ul>
     </section>
+
     <section>
       <h2>Renungan Harian</h2>
-      <div id="renungan"></div>
+      <ul id="renungan-list"></ul>
     </section>
   </main>
+
   <footer>
-    <p>© 2025 GPI Jemaat Bersinar</p>
+    <p>&copy; 2025 GPI Jemaat Bersinar</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
