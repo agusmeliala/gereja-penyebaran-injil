@@ -1,53 +1,54 @@
-// Konfigurasi Firebase (ganti dengan punyamu dari Console)
 const firebaseConfig = {
-  apiKey: "ISI_API_KEY_KAMU",
-  authDomain: "gpi-admin.firebaseapp.com",
-  projectId: "gpi-admin",
-  storageBucket: "gpi-admin.appspot.com",
-  messagingSenderId: "963621876257",
-  appId: "1:963621876257:web:faa2d9f7b8b6e696"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
 };
 
 // Init Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Tampilkan Jadwal
+// Ambil data Jadwal (urut Minggu -> Jumat)
 const jadwalList = document.getElementById("jadwal-list");
-db.collection("Jadwal").get()
-  .then(snapshot => {
-    if (snapshot.empty) {
-      jadwalList.innerHTML = "<li><i>Tidak ada data jadwal</i></li>";
-    } else {
-      snapshot.forEach(doc => {
-        const data = doc.data();
-        const item = document.createElement("li");
-        item.textContent = `${data.Hari} - ${data.Acara} (${data.Waktu})`;
-        jadwalList.appendChild(item);
-      });
-    }
-  })
-  .catch(err => {
-    console.error("Error load Jadwal:", err);
-    jadwalList.innerHTML = "<li style='color:red;'>Gagal load data!</li>";
-  });
+const dayOrder = {
+  "Minggu": 1,
+  "Senin": 2,
+  "Selasa": 3,
+  "Rabu": 4,
+  "Kamis": 5,
+  "Jumat": 6,
+  "Sabtu": 7
+};
 
-// Tampilkan Renungan
-const renunganList = document.getElementById("renungan-list");
-db.collection("Renungan").get()
-  .then(snapshot => {
-    if (snapshot.empty) {
-      renunganList.innerHTML = "<li><i>Tidak ada data renungan</i></li>";
-    } else {
-      snapshot.forEach(doc => {
-        const data = doc.data();
-        const item = document.createElement("li");
-        item.innerHTML = `<strong>${data.Judul}</strong><br>${data.Isi}`;
-        renunganList.appendChild(item);
-      });
-    }
-  })
-  .catch(err => {
-    console.error("Error load Renungan:", err);
-    renunganList.innerHTML = "<li style='color:red;'>Gagal load data!</li>";
+db.collection("Jadwal").get().then((snapshot) => {
+  let dataArr = [];
+  snapshot.forEach((doc) => dataArr.push(doc.data()));
+
+  dataArr.sort((a, b) => dayOrder[a.Hari] - dayOrder[b.Hari]);
+
+  dataArr.forEach((data) => {
+    const item = document.createElement("li");
+    item.textContent = `${data.Hari} - ${data.Acara} (${data.Waktu})`;
+    jadwalList.appendChild(item);
   });
+});
+
+// Ambil 1 Renungan sesuai hari ini
+const renunganList = document.getElementById("renungan-list");
+const today = new Date().getDay(); // 0=Minggu, 1=Senin, dst
+
+db.collection("Renungan").get().then((snapshot) => {
+  let dataArr = [];
+  snapshot.forEach((doc) => dataArr.push(doc.data()));
+
+  const renungan = dataArr[today % dataArr.length];
+
+  if (renungan) {
+    const item = document.createElement("li");
+    item.innerHTML = `<strong>${renungan.Judul}</strong><br>${renungan.Isi}`;
+    renunganList.appendChild(item);
+  }
+});
