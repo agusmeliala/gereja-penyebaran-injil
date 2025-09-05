@@ -5,44 +5,81 @@ body {
   background: #f4f4f4;
   color: #333;
 }
-
 header {
   background: #2c3e50;
   color: white;
   text-align: center;
   padding: 2rem;
 }
-
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #ecf0f1;
+}
 main {
   padding: 2rem;
 }
-
 section {
   background: white;
   margin-bottom: 2rem;
   padding: 1rem 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-
 h2 {
   border-bottom: 2px solid #3498db;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
-
+.poster img {
+  display: block;
+  margin: auto;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 8px;
+}
 ul {
   list-style: none;
   padding: 0;
 }
-
 ul li {
   background: #ecf0f1;
   margin-bottom: 0.5rem;
   padding: 0.75rem 1rem;
   border-radius: 4px;
 }
-
+.galeri-container {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+  animation: slide 20s linear infinite;
+}
+.galeri-container img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+.beban-doa {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.beban-doa a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+.beban-doa a:hover {
+  text-decoration: underline;
+}
 footer {
   background: #2c3e50;
   color: white;

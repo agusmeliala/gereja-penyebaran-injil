@@ -5,17 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GPI Jemaat Bersinar</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 </head>
 <body>
   <header>
     <h1>GPI Jemaat Bersinar</h1>
+    <p>Menjadi terang dan berkat bagi dunia</p>
   </header>
 
   <main>
+    <section class="poster">
+      <h2>Poster</h2>
+      <img id="poster-img" src="" alt="Poster Gereja">
+    </section>
+
     <section>
       <h2>Jadwal Ibadah</h2>
       <ul id="jadwal-list"></ul>
@@ -24,6 +28,18 @@
     <section>
       <h2>Renungan Harian</h2>
       <ul id="renungan-list"></ul>
+    </section>
+
+    <section class="galeri">
+      <h2>Galeri</h2>
+      <div class="galeri-container" id="galeri-container"></div>
+    </section>
+
+    <section class="beban-doa">
+      <h2>Beban Doa</h2>
+      <p>Silakan kirim permohonan doa melalui:</p>
+      <p>Email: <a href="mailto:gpi.bersinar@gmail.com">gpi.bersinar@gmail.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/6281234567890" target="_blank">+62 812-3456-7890</a></p>
     </section>
   </main>
 
