@@ -1,3 +1,4 @@
+// Konfigurasi Firebase (isi dengan data proyekmu)
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
   authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
@@ -7,48 +8,37 @@ const firebaseConfig = {
   appId: "YOUR_APP_ID"
 };
 
-// Init Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Ambil data Jadwal (urut Minggu -> Jumat)
+// Ambil data Jadwal dan urutkan: Minggu -> Selasa -> Jumat
+const orderHari = ["Minggu", "Selasa", "Jumat"];
 const jadwalList = document.getElementById("jadwal-list");
-const dayOrder = {
-  "Minggu": 1,
-  "Senin": 2,
-  "Selasa": 3,
-  "Rabu": 4,
-  "Kamis": 5,
-  "Jumat": 6,
-  "Sabtu": 7
-};
 
-db.collection("Jadwal").get().then((snapshot) => {
-  let dataArr = [];
-  snapshot.forEach((doc) => dataArr.push(doc.data()));
-
-  dataArr.sort((a, b) => dayOrder[a.Hari] - dayOrder[b.Hari]);
-
-  dataArr.forEach((data) => {
-    const item = document.createElement("li");
-    item.textContent = `${data.Hari} - ${data.Acara} (${data.Waktu})`;
-    jadwalList.appendChild(item);
+db.collection("Jadwal").get().then(snapshot => {
+  let items = [];
+  snapshot.forEach(doc => items.push(doc.data()));
+  items.sort((a, b) => orderHari.indexOf(a.Hari) - orderHari.indexOf(b.Hari));
+  items.forEach(data => {
+    const li = document.createElement("li");
+    li.textContent = `${data.Hari} - ${data.Acara} (${data.Waktu})`;
+    jadwalList.appendChild(li);
   });
 });
 
 // Ambil 1 Renungan sesuai hari ini
 const renunganList = document.getElementById("renungan-list");
-const today = new Date().getDay(); // 0=Minggu, 1=Senin, dst
+const hariIni = new Date().getDay(); // 0=Min,1=Sen,...
 
-db.collection("Renungan").get().then((snapshot) => {
-  let dataArr = [];
-  snapshot.forEach((doc) => dataArr.push(doc.data()));
-
-  const renungan = dataArr[today % dataArr.length];
-
-  if (renungan) {
-    const item = document.createElement("li");
-    item.innerHTML = `<strong>${renungan.Judul}</strong><br>${renungan.Isi}`;
-    renunganList.appendChild(item);
+db.collection("Renungan").doc(`Renungan ${hariIni+1}`).get().then(doc => {
+  if (doc.exists) {
+    const data = doc.data();
+    const li = document.createElement("li");
+    li.innerHTML = `<strong>${data.Judul}</strong><br>${data.Isi}`;
+    renunganList.appendChild(li);
+  } else {
+    const li = document.createElement("li");
+    li.textContent = "Renungan hari ini belum tersedia.";
+    renunganList.appendChild(li);
   }
 });
