@@ -1,11 +1,11 @@
-// Firebase Config (isi sesuai Firebase Console)
+// Firebase Config asli
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyD53vxXLgwJYkgoi8bF6TMiBAxy2Pza7f0",
+  authDomain: "gpi-admin.firebaseapp.com",
+  projectId: "gpi-admin",
+  storageBucket: "gpi-admin.firebasestorage.app",
+  messagingSenderId: "963621876257",
+  appId: "1:963621876257:web:faa2d9f7b86b68049e6960"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -35,12 +35,13 @@ db.collection("Jadwal").get().then(snapshot => {
 
 // Ambil Poster
 db.collection("Poster").doc("Poster1").get().then(doc => {
+  const posterImg = document.getElementById("poster-img");
   if (doc.exists) {
-    const data = doc.data();
-    const posterImg = document.getElementById("poster-img");
-    posterImg.src = data.url || "fallback.jpg";
-    posterImg.onerror = () => { posterImg.src = "fallback.jpg"; };
+    posterImg.src = doc.data().url || "fallback.jpg";
+  } else {
+    posterImg.src = "fallback.jpg";
   }
+  posterImg.onerror = () => { posterImg.src = "fallback.jpg"; };
 });
 
 // Ambil Renungan
