@@ -1,4 +1,3 @@
-// Firebase Config asli
 const firebaseConfig = {
   apiKey: "AIzaSyD53vxXLgwJYkgoi8bF6TMiBAxy2Pza7f0",
   authDomain: "gpi-admin.firebaseapp.com",
@@ -7,62 +6,59 @@ const firebaseConfig = {
   messagingSenderId: "963621876257",
   appId: "1:963621876257:web:faa2d9f7b86b68049e6960"
 };
-
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Tanggal & Waktu Aktif
+// Tanggal & Jam aktif
 function updateDateTime() {
   const now = new Date();
-  document.getElementById("datetime").textContent = now.toLocaleString("id-ID", {
-    weekday: "long", year: "numeric", month: "long", day: "numeric",
-    hour: "2-digit", minute: "2-digit", second: "2-digit"
-  });
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const dateStr = now.toLocaleDateString('id-ID', options);
+  const timeStr = now.toLocaleTimeString('id-ID');
+  document.getElementById("datetime").textContent = `${dateStr} pukul ${timeStr}`;
 }
 setInterval(updateDateTime, 1000);
-updateDateTime();
 
 // Ambil Jadwal
 db.collection("Jadwal").get().then(snapshot => {
-  const jadwalList = document.getElementById("jadwal-list");
+  const list = document.getElementById("jadwal-list");
   snapshot.forEach(doc => {
-    const data = doc.data();
+    const d = doc.data();
     const li = document.createElement("li");
-    li.textContent = `${data.Hari} - ${data.Acara} (${data.Waktu})`;
-    jadwalList.appendChild(li);
+    li.textContent = `${d.Hari} - ${d.Acara} (${d.Waktu})`;
+    list.appendChild(li);
   });
 });
 
 // Ambil Poster
 db.collection("Poster").doc("Poster1").get().then(doc => {
-  const posterImg = document.getElementById("poster-img");
   if (doc.exists) {
-    posterImg.src = doc.data().url || "fallback.jpg";
-  } else {
-    posterImg.src = "fallback.jpg";
+    const url = doc.data().url;
+    const img = document.getElementById("poster-img");
+    img.src = url || "fallback.jpg";
+    img.onerror = () => { img.src = "fallback.jpg"; };
   }
-  posterImg.onerror = () => { posterImg.src = "fallback.jpg"; };
 });
 
 // Ambil Renungan
 db.collection("Renungan").get().then(snapshot => {
-  const renunganList = document.getElementById("renungan-list");
+  const list = document.getElementById("renungan-list");
   snapshot.forEach(doc => {
-    const data = doc.data();
+    const d = doc.data();
     const li = document.createElement("li");
-    li.innerHTML = `<strong>${data.Judul}</strong><br>${data.Isi}`;
-    renunganList.appendChild(li);
+    li.innerHTML = `<strong>${d.Judul}</strong><br>${d.Isi}`;
+    list.appendChild(li);
   });
 });
 
 // Ambil Galeri
-db.collection("Galeri").get().then(snapshot => {
-  const galeriContainer = document.getElementById("galeri-container");
+db.collection("galeri").get().then(snapshot => {
+  const container = document.getElementById("galeri-container");
   snapshot.forEach(doc => {
-    const data = doc.data();
+    const url = doc.data().url;
     const img = document.createElement("img");
-    img.src = data.url || "fallback.jpg";
+    img.src = url || "fallback.jpg";
     img.onerror = () => { img.src = "fallback.jpg"; };
-    galeriContainer.appendChild(img);
+    container.appendChild(img);
   });
 });

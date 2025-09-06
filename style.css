@@ -16,7 +16,7 @@ main {
 }
 section {
   background: white;
-  margin-bottom: 2rem;
+  margin: 1rem 0;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -35,12 +35,17 @@ h2 {
 }
 #galeri-container {
   display: flex;
-  overflow-x: auto;
   gap: 10px;
+  overflow: hidden;
+  animation: slide 20s linear infinite;
 }
 #galeri-container img {
-  height: 150px;
+  max-height: 150px;
   border-radius: 8px;
+}
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 footer {
   background: #2c3e50;
