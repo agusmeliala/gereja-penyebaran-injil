@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GPI Jemaat Bersinar</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Firebase -->
+  <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 </head>
@@ -24,8 +23,8 @@
 
     <section>
       <h2>Poster</h2>
-      <div class="poster">
-        <img id="poster-img" src="images/default-poster.jpg" alt="Poster Gereja">
+      <div id="poster-container">
+        <img id="poster-img" src="fallback.jpg" alt="Poster Gereja">
       </div>
     </section>
 
@@ -36,14 +35,12 @@
 
     <section>
       <h2>Galeri</h2>
-      <div class="galeri-container">
-        <div id="galeri" class="galeri"></div>
-      </div>
+      <div id="galeri-container"></div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 GPI Jemaat Bersinar | Kontak: admin@gpi-bersinar.org | WA: +62-812-3456-7890</p>
+    <p>© 2025 GPI Jemaat Bersinar | Kontak: admin@email.com | WA: 08123456789</p>
   </footer>
 
   <script src="script.js"></script>
